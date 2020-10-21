@@ -1,0 +1,204 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:400,400i|Roboto+Condensed:400,600,700);
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #222;
+    font-family: Muli, sans-serif
+}
+
+
+/* Global */
+
+.a-block {
+    display: block!important;
+}
+
+.a-font-bold {
+    font-weight: bold;
+}
+
+.a-font-bolder {
+    font-weight: bolder;
+}
+
+.a-full-width {
+    width: 100% !important;
+}
+
+i.fa {
+    font-size: inherit !important;
+}
+
+.a-mt-1 {
+    margin-top: 10px;
+}
+
+.a-mt-2 {
+    margin-top: 20px;
+}
+
+.a-mt-3 {
+    margin-top: 30px;
+}
+
+.a-mt-4 {
+    margin-top: 40px;
+}
+
+.a-mt-5 {
+    margin-top: 50px;
+}
+
+.a-mb-1 {
+    margin-bottom: 10px;
+}
+
+.a-mb-2 {
+    margin-bottom: 20px;
+}
+
+.a-mb-3 {
+    margin-bottom: 30px;
+}
+
+.a-mb-4 {
+    margin-bottom: 40px;
+}
+
+.a-mb-5 {
+    margin-bottom: 50px;
+}
+
+
+/* Navbar */
+
+.a-site-title {
+    font-weight: 600;
+}
+
+.a-bg-main {
+    background-color: #43bf7d;
+}
+
+.sidenav li {
+    border-bottom: solid 1px #d4d4d4;
+}
+
+
+/* Content */
+
+.a-home-img {
+    opacity: inherit !important;
+}
+
+.parallax-container {
+    height: 300px !important;
+}
+
+.a-caption {
+    position: relative;
+    top: 30%;
+    color: white;
+}
+
+.a-img-club-klasemen {
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        height: 100px;
+    }
+    .logo {
+        width: 25px;
+    }
+    .a-img-club-klasemen {
+        float: none !important;
+    }
+}
+
+.a-latest-match .a-score li,
+.a-latest-result .a-score li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 6px;
+}
+
+.a-latest-match .a-club-title li,
+.a-latest-result .a-club-title li {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.a-latest-match .a-score li img,
+.a-latest-result .a-score li img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+.a-latest-match .a-date,
+.a-latest-match .a-stadium,
+.a-latest-result .a-date,
+.a-latest-result .a-stadium {
+    padding: 0;
+    margin: 0;
+}
+
+.a-line {
+    height: 5px;
+    width: 80px;
+    margin: 30px auto 0;
+    border-top: 1px solid #40424a;
+    border-bottom: 1px solid #40424a;
+}
+
+.a-latest-match,
+.a-latest-result,
+.a-result .head {
+    text-align: center;
+}
+
+.a-foto-profil {
+    width: 30%;
+}
+
+.a-caption-profil {
+    font-size: 20px;
+}
+
+
+/* Footer */
+
+footer {
+    background: #40424a;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    display: block;
+}
+
+footer .icon-social {
+    padding: 0;
+    margin: 20px 0 15px;
+    list-style: none;
+}
+
+footer .icon-social li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 3px;
+    border-radius: 100%;
+}
+
+.fa-2x {
+    color: white !important;
+}

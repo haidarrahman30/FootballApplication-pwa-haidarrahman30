@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Detail Match - Football PWA - Alvin</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#40424a" />
+    <meta name="description" content="Football Information" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="images/icon.png">
+
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+    <!-- Navigasi -->
+    <nav class="a-bg-main" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo a-site-title center" id="logo-container">Football League</a>
+            <a href="javascrit:void(0)" onclick="javascript:window.history.back(-1);return false;" data-target="nav-mobile">
+                <i class="fas fa-arrow-left fa-2x"></i>
+            </a>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+    <div class="container">
+        <div class="row a-mt-3">
+            <div class="card-content">
+                <div class="center-align">
+                    <h5 class="a-font-bold a-mb-3">Detail Match</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="center-align" id="a-preloader">
+                        <div class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-blue">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 id="a-matchDay" class="center-align">Matchday: </h5>
+                    <div id="a-kickOff" class="center-align">Kick Off: </div>
+        
+                    <div class="row" style="margin:20px">
+                      <div class="col s5 right-align truncate">
+                        <span id="a-homeTeamName" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+                      <div class="col s2 center-align">
+                        VS
+                      </div>
+                      <div class="col s5 left-align truncate">
+                        <span id="a-awayTeamName" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+                    </div>
+        
+                    <div id="a-venue" class="center-align"></div>
+        
+                    <div class="row center">
+                      <hr size="5px">
+                      <h6 class="center-align">Head To Head </h6>
+                      <div class="center-align" id="a-numberOfMatches">Number Of Matches: </div>
+                      <div class="center-align" id="a-totalGoals">total Goals: </div>
+        
+                      <div class="col s4 right-align">
+                        <span id="a-homeTeamWins" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+                      <div class="col s4">WINS</div>
+                      <div class="col s4 left-align">
+                        <span id="a-awayTeamWins" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+        
+                      <div class="col s4 right-align">
+                        <span id="a-homeTeamDraws" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+                      <div class="col s4">DRAWS</div>
+                      <div class="col s4 left-align">
+                        <span id="a-awayTeamDraws" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+        
+                      <div class="col s4 right-align">
+                        <span id="a-homeTeamLosses" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+                      <div class="col s4">LOSSES</div>
+                      <div class="col s4 left-align">
+                        <span id="a-awayTeamLosses" class="a-font-bold blue-text text-darken-2"></span>
+                      </div>
+                    </div>
+                    
+                    <div class="row center">
+                        <div id="addToFavorit">
+                            <a class="btn blue">
+                                <i id="iconFav" class="far fa-star"> &nbsp; Tambah Ke Favorit</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="container">
+            <h6>Temui saya disini :</h6>
+            <ul class="icon-social">
+                <li class="facebook"><a href="https://www.facebook.com/alvin.i.pratama"><i
+                            class="fab fa-facebook-square fa-2x"></i></a></li>
+                <li class="twitter"><a href="https://twitter.com/alvinindrapra"><i
+                            class="fab fa-twitter-square fa-2x"></i></a></li>
+                <li class="instagram"><a href="https://instagram.com/alvin_indrap"><i
+                            class="fab fa-instagram fa-2x"></i></a></li>
+            </ul>
+            <div class="tel-fax-mail">
+                <ul>
+                    <li><span>Email:</span> alvinindrap@gmail.com</li>
+                </ul>
+            </div>
+            <div class="ft-bottom"><span>Copyright © 2019 All Rights Reserved </span></div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/detail_match.js"></script>
+    <script src="js/dbfootball.js"></script>
+    <script src="js/dbfunction.js"></script>
+    <script src="js/idb.js"></script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then(function () {
+                        console.log("Pendaftaran ServiceWorker berhasil");
+                    })
+                    .catch(function () {
+                        console.log("Pendaftaran ServiceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.");
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = Number(urlParams.get("id"));
+            var isFavorit = false
+            checkData("match_favorit", id).then((msg) => {
+                console.log("statusData: resolve = " + msg)
+                document.getElementById("iconFav").classList.add('fas');
+                document.getElementById("iconFav").classList.add('fa-star');
+                document.getElementById("iconFav").innerHTML = " Favorit"
+                getSavedDataById("match")
+                isFavorit = true
+            }).catch((msg) => {
+                console.log("statusData: reject = " + msg)
+                document.getElementById("iconFav").classList.add('far');
+                document.getElementById("iconFav").classList.add('fa-star');
+                document.getElementById("iconFav").innerHTML = " Tambah Ke Favorit"
+                getDetailMatchById()
+                isFavorit = false
+            })
+
+            var iconFav = document.getElementById("iconFav");
+
+            iconFav.onclick = function () {
+                console.log("Tombol Favorit di klik.");
+                if (isFavorit) {
+                    deleteDatafav("match_favorit", id);
+                    isFavorit = false
+                } else {
+                    items = getDetailMatchById();
+                    items.then(function (match) {
+                        createDataFav("match", match);
+                    });
+                    isFavorit = true
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

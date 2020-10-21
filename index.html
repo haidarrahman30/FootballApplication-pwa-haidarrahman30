@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GetTheBall - Haidarrahman30 </title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#43bf7d" />
+    <meta name="description" content="Football Information" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="apple-touch-icon" href="images/icon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Navigasi -->
+    <nav class="a-bg-main" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo a-site-title center" id="logo-container">GTBall<img src="images/icon.png" class="logo" alt="logo" style="width: 50px;"></a>
+            <a href="#" class="sidenav-trigger a-block" data-target="nav-mobile"><i class="fas fa-bars"></i></a>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+
+    <div id="body-content"></div>
+    <footer style="background-color: #43bf7d;">
+        <div class="container">
+            <h6>Contact : </h6>
+            <ul class="icon-social">
+                <li class="facebook"><a href="https://www.facebook.com/haidar.rahman.758/"><i
+                            class="fab fa-facebook-square fa-2x"></i></a></li>
+                <li class="twitter"><a href="https://twitter.com/haidarrahman30"><i
+                            class="fab fa-twitter-square fa-2x"></i></a></li>
+                <li class="instagram"><a href="https://instagram.com/haidarrahman30"><i
+                            class="fab fa-instagram fa-2x"></i></a></li>
+            </ul>
+            <div class="tel-fax-mail">
+                <ul>
+                    <li><span>Email:</span> haidarrahmans30@gmail.com</li>
+                </ul>
+            </div>
+            <div class="ft-bottom"><span>© 2020 Copyright GTBallteam</span></div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/api.js"></script>
+    <!-- Pemanggilan JSON -->
+    <script src="js/klasemen.js"></script>
+    <script src="js/matchleague.js"></script>
+
+    <script src="js/detail_team.js"></script>
+    <script src="js/detail_match.js"></script>
+
+    <script src="js/dbfootball.js"></script>
+    <script src="js/dbfunction.js"></script>
+    <script src="js/idb.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var page = window.location.hash.substr(1);
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.parallax').parallax();
+        });
+
+        if (!('serviceWorker' in navigator)) {
+            console.log("Service worker tidak didukung browser ini.");
+        } else {
+            registerServiceWorker();
+        }
+
+        function registerServiceWorker() {
+            return navigator.serviceWorker.register('service-worker.js')
+                .then(function(registration) {
+                    console.log('Registrasi service worker berhasil.');
+                    return registration;
+                })
+                .catch(function(err) {
+                    console.error('Registrasi service worker gagal.', err);
+                });
+        }
+    </script>
+    <script>
+        // notification API
+        if ('Notification' in window) {
+            Notification.requestPermission().then(perm => {
+                if (perm == 'denied') {
+                    return
+                } else if (perm == 'default') {
+                    return
+                }
+            })
+        }
+
+        // push notification API
+        if ('PushManager' in window) {
+            navigator.serviceWorker.getRegistration().then(regis => {
+                regis.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlBase64ToUint8Array("BMzLBN47faSoxI6wBTk78JXJTLZoe4Kd96oy8bK6qVOu32LXl8-e70YJmeA41ZXMZ3SjjP-fBOBdCByyemoDMAw")
+                }).then(subscribe => {
+                    console.log('berhasil melakukan subscribe dengan endpoin : ', subscribe.endpoint);
+                    console.log('berhasil melakukan subscribe dengan p265dh key : ', btoa(String.fromCharCode.apply(null, new Uint8Array(subscribe.getKey('p256dh')))));
+                    console.log('berhasil melakukan subscribe dengan auth key : ', btoa(String.fromCharCode.apply(null, new Uint8Array(subscribe.getKey('auth')))));
+                }).catch(err => {
+                    console.log('subscribetion error : ' + err.message)
+                })
+            }).catch(e => {
+                console.log('push manager error : ' + e);
+            })
+        }
+
+        function urlBase64ToUint8Array(base64String) {
+            const padding = '='.repeat((4 - base64String.length % 4) % 4);
+            const base64 = (base64String + padding)
+                .replace(/-/g, '+')
+                .replace(/_/g, '/');
+            const rawData = window.atob(base64);
+            const outputArray = new Uint8Array(rawData.length);
+            for (let i = 0; i < rawData.length; ++i) {
+                outputArray[i] = rawData.charCodeAt(i);
+            }
+            return outputArray;
+        }
+    </script>
+</body>
+
+</html>

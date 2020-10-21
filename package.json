@@ -1,0 +1,21 @@
+{
+    "name": "football-pwa",
+    "version": "1.1.0",
+    "description": "Aplikasi Submission Ke-2 Dicoding yaitu Football dengan PWA",
+    "main": "service-worker.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "haidarrahman30"
+    },
+    "keywords": [
+        "football"
+    ],
+    "author": "Muhammad Khaidar Rahman",
+    "license": "ISC",
+    "dependencies": {
+        "web-push": "^3.4.4"
+    }
+}

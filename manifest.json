@@ -1,0 +1,16 @@
+{
+    "name": "GetTheBall - haidarrahman30",
+    "short_name": "GTball",
+    "description": "Aplikasi GetTheBall PWA oleh Muhammad Khaidar Rahman",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#43bf7d",
+    "gcm_sender_id": "340122452248",
+    "theme_color": "#40424a",
+    "icons": [{
+        "src": "images/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+
+}
